@@ -4,11 +4,11 @@ A simple todolist app using react.
 
 ## What I Learned:
 
-- State management
-- How to use Package react-icons
+- State management in ReactJS
 - Passing functions as props to child components
-- Ways to bind this to a handler function
-- Styling using package styled-components
+- Using Hooks such as useState and UseEffect
+- Using the PropTypes package for check props types
+- And a litte bit of css...
 
 ## Github Pages:
 
