@@ -18,12 +18,12 @@ https://diogo-machado.github.io/todo-react/
 
 ### Preview:
 
-![alt text](app-preview.png 'Preview Image')
+![alt text](app-preview.PNG 'Preview Image')
 
 ## Installation:
 
 ```
-git clone https://github.com/diogo-machado/todo-react.git
+git clone https://github.com/diogo-machado/todo-list.git
 cd todo-react
 npm install
 npm start
