@@ -32,8 +32,23 @@ const Form = ({
   );
 };
 
+Form.defaultProps = {
+  inputText: '',
+  todos: [],
+  setTodos: () => {},
+  setStatus: 'all',
+};
+
 Form.propTypes = {
+  inputText: PropTypes.string,
   setInputText: PropTypes.func.isRequired,
+  todos: PropTypes.arrayOf(PropTypes.shape({
+    text: PropTypes.string,
+    completed: PropTypes.bool,
+    id: PropTypes.number.isRequired,
+  })),
+  setTodos: PropTypes.func,
+  setStatus: PropTypes.string,
 };
 
 export default Form;

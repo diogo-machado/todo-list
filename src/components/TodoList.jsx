@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Todo from './Todo';
 
 const TodoList = ({ todos, setTodos, filteredTodos }) => (
@@ -16,4 +17,25 @@ const TodoList = ({ todos, setTodos, filteredTodos }) => (
     </ul>
   </div>
 );
+
+TodoList.defaultProps = {
+  todos: [],
+  setTodos: () => {},
+  filteredTodos: [],
+};
+
+TodoList.propTypes = {
+  todos: PropTypes.arrayOf(PropTypes.shape({
+    text: PropTypes.string,
+    completed: PropTypes.bool,
+    id: PropTypes.number.isRequired,
+  })),
+  setTodos: PropTypes.func,
+  filteredTodos: PropTypes.arrayOf(PropTypes.shape({
+    text: PropTypes.string,
+    completed: PropTypes.bool,
+    id: PropTypes.number.isRequired,
+  })),
+};
+
 export default TodoList;
