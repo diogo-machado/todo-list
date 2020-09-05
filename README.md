@@ -14,7 +14,7 @@ A simple todolist app using react.
 
 ### Link:
 
-https://diogo-machado.github.io/todo-react/
+https://diogo-machado.github.io/todo-list/
 
 ### Preview:
 
