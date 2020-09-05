@@ -9,6 +9,9 @@ const Form = ({
   };
   const submitTodoHandler = (e) => {
     e.preventDefault();
+    if (!inputText) {
+      return 'empty';
+    }
     setTodos([...todos, { text: inputText, completed: false, id: Math.random() * 1000 }]);
     setInputText('');
   };
@@ -17,10 +20,13 @@ const Form = ({
   };
   return (
     <form action="">
-      <input value={inputText} onChange={inputTextHandler} type="text" className="todo-input" />
-      <button onClick={submitTodoHandler} className="todo-button" type="submit">
-        <i className="fas fa-plus-square" />
-      </button>
+      <div className="control">
+        <input value={inputText} onChange={inputTextHandler} type="text" className="todo-input" />
+        <button onClick={submitTodoHandler} className="todo-button" type="submit">
+          <i className="fas fa-plus-square" />
+        </button>
+      </div>
+
       <div className="select">
         <select onChange={statusHandler} name="" id="" className="filter-todo">
           <option value="all">All</option>
@@ -36,7 +42,7 @@ Form.defaultProps = {
   inputText: '',
   todos: [],
   setTodos: () => {},
-  setStatus: 'all',
+  setStatus: () => {},
 };
 
 Form.propTypes = {
@@ -48,7 +54,7 @@ Form.propTypes = {
     id: PropTypes.number.isRequired,
   })),
   setTodos: PropTypes.func,
-  setStatus: PropTypes.string,
+  setStatus: PropTypes.func,
 };
 
 export default Form;
